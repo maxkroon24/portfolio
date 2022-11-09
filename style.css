@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Bebas';
+    src: url(/BebasNeue-Regular.ttf);
+  }
+@font-face {
+    font-family: 'Hahmlet';
+    src: url(/Hahmlet-VariableFont_wght.ttf);
+    font-weight: 100;
+    font-weight: 200;
+    font-weight: 300;
+    font-weight: 400;
+    font-weight: 500;
+    font-weight: 600;
+    font-weight: 700;
+  }
+  * {
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    --bg-color: #636262;
+    --accent-color: #41ead4;
+    --main-color: #ffffff;
+  }
+body {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  overflow-x: hidden;
+}
+.home-page {
+  z-index: 4;
+  position: relative;
+  background-color: var(--bg-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.navigation {
+  font-family: 'Roboto Mono';
+  width: 100vw;
+  height: 6rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  background-color: transparent;
+}
+.my-name {
+  position: absolute;
+  left: 4rem;
+  font-size: 700;
+  font-size: 3rem;
+  color: var(--accent-color);
+}
+.links {
+  width: 50%;
+  position: absolute;
+  top: 0.3rem;
+  right: 1vw;
+  height: 6rem;
+  display: flex;
+  align-items:center;
+  justify-content: right;
+  list-style-type: none;
+  flex-direction: row;
+}
+.link {
+  position: relative;
+  margin: 0 3rem;
+  color:var(--main-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.link a{
+  text-decoration: none;
+  color: white;
+  transition: color 400ms ease-in;
+}
+.link a:hover {
+  transition: color 400ms ease-in;
+  color:var(--accent-color);
+}
+.home-page-title {
+  font-family: 'Bebas';
+  color: var(--accent-color);
+  font-size: 12rem;
+  display: block;
+  line-height: 10.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 8rem;
+}
+.arrow-wrapper {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  bottom: 20%;
+  color: var(--main-color);
+  animation: 3s ease-in infinite 1s movedown;
+}
+@keyframes movedown {
+0%{
+  bottom: 20%; 
+  opacity: 1;
+}
+35% {
+  bottom: 5%;
+  opacity: 0;
+}
+100% {
+  bottom: 20%; 
+  opacity: 1;
+}
+}
+.projects-page {
+  position: relative;
+  width: 100vw;
+  height: 250vh;
+  min-height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+.menu-wrapper, .close-wrapper {
+  position: absolute;
+  right: 3rem;
+  z-index: 1000;
+  color: var(--main-color);
+  font-size: 1.5rem;
+  display: none;
+}
+.menu-wrapper.clicked {
+  display: none;
+}
+.menu-wrapper:hover, .close-wrapper:hover {
+  color: var(--accent-color);
+}
+.right-timeline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+}
+.arrow-wrapper {
+  width: 5rem;
+  height: 5rem;
+}
+.projects-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 5vw;
+  height: calc(100% - 5vw);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.projects {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto Mono';
+  margin-left: 2rem;
+}
+.project-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--main-color);
+}
+.project {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-wrapper li {
+  cursor: pointer;
+}
+.project-wrapper:nth-child(even) {
+color: var(--accent-color);
+}
+.project-img {
+  display: none;
+  opacity: 0;
+  width: 50%;
+  height: 140%;
+}
+.project-img.shown {
+  animation: fadeIn 700ms ease-in;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  visibility: visible;
+  object-fit: contain;
+  width: 50vw;
+  opacity: 1;
+  z-index: 100;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.contact-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+.contacts {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 13rem;
+}
+.contact-title {
+  font-family: 'Bebas';
+  color: var(--accent-color);
+  font-size: 8rem;
+  letter-spacing: 3px;
+}
+.contact-icon {
+  color: var(--main-color);
+  font-size: 3rem;
+  cursor: pointer;
+}
+.contact-form-wrapper {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  font-family: 'Roboto Mono';
+  align-items: center;
+  justify-content: center;
+}
+.contact-form-wrapper form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-family: 'Roboto Mono';
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.name-email-wrapper {
+  top: 0%;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.email-input, .name-input {
+  padding-bottom: 0.2rem;
+  background-color: transparent;
+  width: 40%;
+  border: none;
+  z-index: 1000;
+  color: var(--main-color);
+  font-size: 1.3rem;
+  outline: none;
+  font-family: 'Roboto Mono';
+  text-align: center;
+  border-bottom: 1px solid var(--accent-color);
+}
+.email-input::placeholder, .name-input::placeholder {
+  color: var(--main-color);
+  font-family: 'Roboto Mono';
+}
+.message-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.message-input {
+  z-index: 1000;
+  text-align: center;
+  color: var(--main-color);
+  font-size: 1.3rem;
+  margin-top: 3rem;
+  background-color: transparent;
+  width: 95%;
+  outline: none;
+  border: none;
+  font-family: 'Roboto Mono';
+  resize: none;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.message-input::placeholder {
+  color: var(--main-color);
+  font-family: 'Roboto Mono';
+  font-size: 1.3rem;
+}
+.submit-button {
+  font-family: 'Roboto Mono';
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  outline: none;
+  color: var(--main-color);
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 0.7rem 0;
+  transition: background-color 500ms ease-in;
+}
+.submit-button:hover {
+  transition: background-color 500ms ease-in;
+  background-color: var(--accent-color);
+}
+@media (max-width: 1132px) {
+  .home-page-title {
+    font-size: 10rem;
+  }
+  .my-name {
+    font-size: 2.5rem;
+  }
+  .link {
+    font-size: 1.3rem;
+  }
+  .year-title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 930px) {
+  .home-page-title {
+    font-size: 8rem;
+  }
+  .my-name {
+    font-size: 2rem;
+  }
+  .link {
+    font-size: 1.1rem;
+  }
+  .year-title {
+    font-size: 2.5rem;
+  }
+  .project-wrapper {
+    font-size: 1.3rem;
+  }
+  .arrow-wrapper {
+    font-size: 1rem;
+  }
+  .contact-title {
+    font-size: 6rem;
+  }
+  .contact-icon {
+    scale: 0.9;
+  }
+  .contact-form-wrapper {
+    width: 80vw;
+  }
+}
+@media (max-width: 710px) {
+  .home-page-title {
+    font-size: 8rem;
+  }
+  
+  .contact-title {
+    font-size: 4.5rem;
+  }
+  .contact-icon {
+    scale: 0.7;
+  }
+  .contact-form-wrapper {
+    margin-top: -2rem;
+    width: 80vw;
+  }
+}
+@media (max-width: 650px) {
+  .project-wrapper {
+    font-size: 1rem;
+  }
+  .contact-icon {
+    display: none;
+  }
+  .email-input::placeholder, .email-input, .name-input::placeholder, .name-input, .message-input::placeholder, .message-input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .links {
+    top: 0.2rem;
+  }
+  .link {
+    font-size: 0.8rem;
+  }
+  .my-name{
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 550px) {
+  .home-page-title {
+    font-size: 5rem;
+  }
+  .project-wrapper {
+    font-size: 0.8rem;
+  }
+  .contact-icon {
+    display: none;
+  }
+  .arrow-wrapper {
+    scale: 0.7;
+  }
+  .links {
+    
+  display: none;
+  }
+  .links.expanded {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    z-index: 400;
+   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  }
+  .links.expanded  .close-wrapper {
+    top: 2rem;
+    right: 2rem;
+    display: block;
+  }
+  .menu-wrapper{
+    display: block;
+  }
+  .link {
+    font-size: 4rem;
+    font-family: 'Roboto Mono';
+  }
+}
+@media (max-width: 450px) {
+  .project-wrapper {
+    font-size: 0.6rem;
+  }
+  .email-input::placeholder, .email-input, .name-input::placeholder, .name-input, .message-input::placeholder, .message-input {
+    font-size: 0.6rem;
+  }
+}
